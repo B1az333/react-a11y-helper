@@ -10,6 +10,7 @@ const webpackConfig = (env): Configuration => ({
     ...(env.production || !env.development ? {} : {devtool: "eval-source-map"}),
     resolve: {
         extensions: [".ts", ".tsx", ".js"],
+        //@ts-ignore
         plugins: [new TsconfigPathsPlugin()]
     },
     output: {
