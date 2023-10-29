@@ -1,14 +1,14 @@
 {
-  "name": "@B1az333/react-a11y-helper",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/B1az333"
-  },
+  "name": "react-a11y-helper",
+  "description": "⚛ React A11y Helper Library ⚛",
   "version": "1.0.0",
-  "description": "React a11y helper library",
+  "main": "src/index.tsx",
   "scripts": {
-    "rollup": "rollup -c"
+    "develop": "webpack-cli serve --mode=development --env development --open --hot",
+    "build": "webpack --mode=production --env production --progress",
+    "lint": "eslint './src/**/*.{ts,tsx,js,jsx}'",
+    "lint:fix": "eslint './src/**/*.{ts,tsx,js,jsx}' --fix"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/B1az333"
@@ -23,20 +23,33 @@
   "author": "Volodymyr Zabelskyi",
   "license": "ISC",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-typescript": "^11.1.5",
-    "@types/react": "^18.2.33",
-    "react": "^18.2.0",
-    "rollup": "^4.1.5",
-    "rollup-plugin-dts": "^6.1.0",
-    "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "@types/node": "16.18.59",
+    "@types/react": "18.2.31",
+    "@types/react-dom": "18.2.14",
+    "@types/webpack": "5.28.4",
+    "@types/webpack-dev-server": "4.7.1",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "eslint": "8.52.0",
+    "eslint-config-prettier": "8.10.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-webpack-plugin": "3.2.0",
+    "fork-ts-checker-webpack-plugin": "7.3.0",
+    "html-webpack-plugin": "5.5.3",
+    "prettier": "2.8.8",
+    "ts-loader": "9.5.0",
+    "ts-node": "10.9.1",
+    "tsconfig-paths-webpack-plugin": "3.5.2",
+    "typescript": "4.9.5",
+    "webpack": "5.89.0",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "4.15.1"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "files": [
-    "dist"
-  ],
-  "types": "dist/index.d.ts"
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
 }
