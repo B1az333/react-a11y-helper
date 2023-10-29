@@ -1,0 +1,42 @@
+{
+  "name": "@B1az333/react-a11y-helper",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/B1az333"
+  },
+  "version": "1.0.0",
+  "description": "React a11y helper library",
+  "scripts": {
+    "rollup": "rollup -c"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/B1az333"
+  },
+  "keywords": [
+    "a11y",
+    "react",
+    "library",
+    "a11y-helper",
+    "accessibility"
+  ],
+  "author": "Volodymyr Zabelskyi",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/react": "^18.2.33",
+    "react": "^18.2.0",
+    "rollup": "^4.1.5",
+    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts"
+}
