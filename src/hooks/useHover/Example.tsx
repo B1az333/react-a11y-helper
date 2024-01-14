@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from "react";
 
 import { useHover } from "./index";
 
-export const Example = () => {
+export const ExampleHover = () => {
   const { hoverProps, isHovered } = useHover({
     onHoverStart: (e) => {
       console.log("Hover Started!", e.target);

@@ -2,28 +2,31 @@ import React from "react";
 
 import { useButton } from "./index";
 
-const CustomButton = ({ onPress, children }) => {
-  const { buttonProps, isPressed } = useButton({ onPress });
+export const ExampleButton = () => {
+  const handlePress = () => console.log("Button pressed!");
+  const handlePressStart = () => console.log("Button press started!");
+  const handlePressEnd = () => console.log("Button press ended!");
+  const handlePressUp = () => console.log("Button press up!");
+  const handlePressChange = (isPressed: boolean) => console.log("Button press state changed:", isPressed);
 
-  return (
-    <button
-      {...buttonProps}
-      style={{ background: isPressed ? "red" : "blue", color: "white" }}
-    >
-      {children}
-    </button>
-  );
-};
-
-export const Example = () => {
-  const handleClick = () => {
-    console.log("Button clicked!");
-  };
+  const { buttonProps, isPressed } = useButton({
+    onPress: handlePress,
+    onPressStart: handlePressStart,
+    onPressEnd: handlePressEnd,
+    onPressUp: handlePressUp,
+    onPressChange: handlePressChange,
+    preventFocusOnPress: true,
+  });
 
   return (
     <div>
-      <h1>Custom Button Example</h1>
-      <CustomButton onPress={handleClick}>Click me!</CustomButton>
+      <h1>Button Example</h1>
+      <button
+        {...buttonProps}
+        style={{ background: isPressed ? "red" : "blue", color: "white" }}
+      >
+        Button
+      </button>
     </div>
   );
 };

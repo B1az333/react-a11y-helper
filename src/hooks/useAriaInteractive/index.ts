@@ -1,4 +1,4 @@
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef } from "react";
 
 type PropsType = {
   isInteractive: boolean;
@@ -14,7 +14,7 @@ type PropsType = {
   ariaRole?: string;
 };
 
-export const useAriaInteractive = ({
+export const useAriaInteractive = <T extends HTMLElement>({
   isInteractive,
   ariaLabel,
   ariaLabelledBy,
@@ -27,7 +27,7 @@ export const useAriaInteractive = ({
   ariaOwns,
   ariaRole,
 }: PropsType) => {
-  const elementRef = useRef<HTMLDivElement>(null);
+  const elementRef = useRef<T>(null);
 
   useEffect(() => {
     const element = elementRef.current;

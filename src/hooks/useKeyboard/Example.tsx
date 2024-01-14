@@ -2,7 +2,7 @@ import React from "react";
 
 import { useKeyboard } from "./index";
 
-export const Example = () => {
+export const ExampleKeyboard = () => {
   const { keyboardProps } = useKeyboard({
     onKeyDown: (e) => console.log("Key Down:", e.key),
     onKeyUp: (e) => console.log("Key Up:", e.key),

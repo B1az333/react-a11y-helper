@@ -2,7 +2,7 @@ import React, { HTMLAttributes } from "react";
 
 import { useFocusWithin } from "./index";
 
-export const Example = () => {
+export const ExampleFocusWithin = () => {
   const { focusWithinProps, isFocusWithin } = useFocusWithin({
     onFocusWithin: () => {
       console.log("Element or its descendant received focus");
@@ -16,9 +16,13 @@ export const Example = () => {
   });
 
   return (
-    <div {...(focusWithinProps as HTMLAttributes<HTMLDivElement>)}>
+    <div>
       {isFocusWithin ? "Focused within" : "Not focused within"}
       <input />
+      <button>Click me</button>
+      <div {...(focusWithinProps as HTMLAttributes<HTMLDivElement>)} style={{ width:'100px', height: '100px' }}>
+        <input />
+      </div>
       <button>Click me</button>
     </div>
   );
